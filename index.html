@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+        />
+    </head>
+    <body style="background-image: url('https://source.unsplash.com/collection/1084504/1600x900');">
+        <div class="main">
+            <div class="datetime">
+                <div class="weather">
+                    <a class="weatherwidget-io" href="https://forecast7.com/en/n26d91n48d67/itajai/"  data-font="Roboto" data-icons="Climacons Animated" data-mode="Current" data-theme="dark" data-suncolor="#ffd615" data-basecolor="#00000000" data-cloudfill="#00000000">ITAJAÍ WEATHER</a>
+                    <script>
+                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+                    </script>
+                </div>
+                <div class="divider"></div>
+                <div class="clock">
+                    <h2 id='time'></h2>
+                    <h3 id='date'></h3>
+                </div>
+   
+            </div>
+
+            <div id="links">
+                <div class="links-menu" onclick="hideLinks()"><i class="fas fa-link close" ></i></div>
+                <ul id="links-list">
+                    
+                </ul>
+            </div>
+
+            <div id="notifications">
+                
+            </div>
+        </div>
+        
+                
+        <script src="js/clock.js"></script>
+        <script src="js/notifications.js"></script>
+        <script src="js/links.js"></script>
+    </body>
+</html>
