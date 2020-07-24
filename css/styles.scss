@@ -2,6 +2,8 @@
 
 $bg: #00000077;
 $blur: 8px;
+
+$emph: #ffffff77;
 html, body{
     padding: 0;
     margin: 0;
@@ -70,11 +72,12 @@ body{
 }
 #notifications{
     position: absolute;
-    width: 450px;
+    width: 250px;
     right: 2rem;
     bottom: 2rem;
     display: flex;
     flex-direction: column;
+
     .notification{
         margin: 10px;
         background-color: $bg ;
@@ -93,7 +96,7 @@ body{
         p,i{
             align-self: center;
         }
-        p{
+        .text{
             text-align: left;
             flex-grow: 10;
         }
@@ -101,9 +104,19 @@ body{
             font-style: normal;
             transition: .2s ease;
             margin-right: 15px;
+            min-width: 25px;
         }
         .close{
         }
+    }
+    .warning{
+        background-color: $emph;
+        backdrop-filter: blur($blur);
+        color: #000;
+        p{
+            font-weight: 600;
+        }
+        // color: #000;
     }
 }
 
@@ -138,11 +151,11 @@ body{
         font-size: 1.5rem;
         background-color: rgb(255, 255, 255) ;
         backdrop-filter: blur($blur);
-        border-radius: 5px;
+        border-radius: 10px;
         margin-right: 10px;
         transition: .2s ease;
         &:hover{
-            transform: scale(1.25);
+            transform: scale(1.2);
         }
     }
     .links-menu{

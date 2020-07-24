@@ -27,7 +27,7 @@
         <div class="main">
             <div class="datetime">
                 <div class="weather">
-                    <a class="weatherwidget-io" href="https://forecast7.com/en/n26d91n48d67/itajai/"  data-font="Roboto" data-icons="Climacons Animated" data-mode="Current" data-theme="dark" data-suncolor="#ffd615" data-basecolor="#00000000" data-cloudfill="#00000000">ITAJAÍ WEATHER</a>
+                    <a class="weatherwidget-io" href="https://forecast7.com/en/n26d91n48d67/itajai/"  data-font="Roboto" data-icons="Climacons Animated" data-mode="Current" data-theme="dark" data-suncolor="#faee1c" data-basecolor="#00000000" data-mooncolor="#278ea5" data-cloudfill="#00000000">ITAJAÍ WEATHER</a>
                     <script>
                     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
                     </script>
@@ -48,13 +48,27 @@
             </div>
 
             <div id="notifications">
-                
+                <div id="water" class="notification" onclick="resetWater()">
+                    <i class="fas fa-water"></i>
+                    <p class="text">Water</p>
+                    <p class="timer" id="water-timer">00</p>
+                </div>
+                <div id="walk" class="notification" onclick="resetWalk()">
+                    <i class="fas fa-walking"></i>
+                    <p class="text">Stretch</p>
+                    <p class="timer" id="walk-timer">00</p>
+                </div>
+                <div id="posture" class="notification" onclick="resetPosture()">
+                    <i class="fas fa-couch"></i>
+                    <p class="text">Posture</p>
+                    <p class="timer" id="posture-timer">00</p>
+                </div>
             </div>
         </div>
         
                 
         <script src="js/clock.js"></script>
-        <script src="js/notifications.js"></script>
+        <script src="js/new_notifications.js"></script>
         <script src="js/links.js"></script>
     </body>
 </html>

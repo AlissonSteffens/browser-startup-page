@@ -79,7 +79,7 @@ body {
 
 #notifications {
   position: absolute;
-  width: 450px;
+  width: 250px;
   right: 2rem;
   bottom: 2rem;
   display: -webkit-box;
@@ -118,7 +118,7 @@ body {
       align-self: center;
 }
 
-#notifications .notification p {
+#notifications .notification .text {
   text-align: left;
   -webkit-box-flex: 10;
       -ms-flex-positive: 10;
@@ -130,6 +130,18 @@ body {
   -webkit-transition: .2s ease;
   transition: .2s ease;
   margin-right: 15px;
+  min-width: 25px;
+}
+
+#notifications .warning {
+  background-color: #ffffff77;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  color: #000;
+}
+
+#notifications .warning p {
+  font-weight: 600;
 }
 
 #links {
@@ -175,15 +187,15 @@ body {
   background-color: white;
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
-  border-radius: 5px;
+  border-radius: 10px;
   margin-right: 10px;
   -webkit-transition: .2s ease;
   transition: .2s ease;
 }
 
 #links .link:hover {
-  -webkit-transform: scale(1.25);
-          transform: scale(1.25);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 #links .links-menu {
