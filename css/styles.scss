@@ -73,8 +73,9 @@ body{
     width: 450px;
     right: 2rem;
     bottom: 2rem;
+    display: flex;
+    flex-direction: column;
     .notification{
-        width: 400px;
         margin: 10px;
         background-color: $bg ;
         backdrop-filter: blur($blur);
@@ -94,13 +95,14 @@ body{
         }
         p{
             text-align: left;
-            margin-right: 75px;
-            width: 350px;
-            margin-left: 20px;
+            flex-grow: 10;
         }
         i{
             font-style: normal;
             transition: .2s ease;
+            margin-right: 15px;
+        }
+        .close{
         }
     }
 }
