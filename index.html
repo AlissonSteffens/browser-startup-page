@@ -23,7 +23,7 @@
         </script>
 
     </head>
-    <body style="background-image: url('https://source.unsplash.com/collection/1084504/1600x900');">
+    <body id='body'>
         <div class="main">
             <div class="datetime">
                 <div class="weather">
@@ -46,8 +46,13 @@
                     
                 </ul>
             </div>
+            <div class="description">
+                <p id="title"></p>
+                <p id="author"></p>
+            </div>
+            
 
-            <div id="notifications">
+            <!-- <div id="notifications">
                 <div id="water" class="notification" onclick="resetWater()">
                     <i class="fas fa-water"></i>
                     <p class="text">Water</p>
@@ -63,12 +68,13 @@
                     <p class="text">Posture</p>
                     <p class="timer" id="posture-timer">00</p>
                 </div>
-            </div>
+            </div> -->
         </div>
         
                 
         <script src="js/clock.js"></script>
-        <script src="js/new_notifications.js"></script>
+        <script src="js/bg.js"></script>
+        <!-- <script src="js/new_notifications.js"></script> -->
         <script src="js/links.js"></script>
     </body>
 </html>

@@ -6,7 +6,7 @@ html, body {
 
 body {
   height: 100vh;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   font-family: 'Roboto', sans-serif;
   overflow: hidden;
@@ -75,6 +75,60 @@ body {
 
 .animate__animated.animate__backOutLeft {
   --animate-duration: 1s;
+}
+
+.description {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  -ms-flex-line-pack: right;
+      align-content: right;
+  text-align: right;
+  max-width: 80vw;
+}
+
+.description p {
+  background-color: #00000077;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  padding: .3rem .75rem;
+  display: block;
+  border-radius: 5px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: right;
+  margin-left: auto;
+}
+
+.description #title {
+  font-size: 2rem;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.description #author {
+  margin-top: 0;
+}
+
+.description #author a {
+  text-decoration: none;
+  color: #fff;
+  margin-left: .75rem;
 }
 
 #notifications {
