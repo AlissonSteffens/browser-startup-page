@@ -46,6 +46,33 @@ function lightOrDark(color) {
     }
 }
 
+function getCssValuePrefix()
+{
+    var rtrnVal = '';//default to standard syntax
+    var prefixes = ['-o-', '-ms-', '-moz-', '-webkit-'];
+
+    // Create a temporary DOM object for testing
+    var dom = document.createElement('div');
+
+    for (var i = 0; i < prefixes.length; i++)
+    {
+        // Attempt to set the style
+        dom.style.background = prefixes[i] + 'linear-gradient(#000000, #ffffff)';
+
+        // Detect if the style was successfully set
+        if (dom.style.background)
+        {
+            rtrnVal = prefixes[i];
+        }
+    }
+
+    dom = null;
+    delete dom;
+
+    return rtrnVal;
+}
+
+
 function doBG(){
     const myRequest = new Request('https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&isOnView=true&q=canvas');
     fetch(myRequest)
@@ -73,11 +100,13 @@ function doBG(){
                 img.src = 'https://cors-anywhere.herokuapp.com/'+item.primaryImageSmall;
                 
                 img.addEventListener('load', function() {
-                    var p = colorThief.getPalette(img,3);
+                    var p = colorThief.getPalette(img,4);
                     var a = p[0];
                     var c = rgbToHex(a[0],a[1],a[2]);
-                    document.getElementById("bg").style.backgroundColor = c;
-                    var a = p[1];
+                    var b = p[1];
+                    var c2 = rgbToHex(b[0],b[1],b[2]);
+                    document.getElementById("bg").style.backgroundImage = getCssValuePrefix() + 'linear-gradient(133deg, ' + c + ', ' + c2 + ')';
+                    var a = p[2];
                     var c = rgbToHex(a[0],a[1],a[2]);
                     
                     document.getElementById("title").style.color = c;
@@ -88,7 +117,7 @@ function doBG(){
                     }else{
                         document.getElementById("title").style.backgroundColor = "#fff";
                     }
-                    var a = p[2];
+                    var a = p[3];
                     var c = rgbToHex(a[0],a[1],a[2]);
                     document.getElementById("author").style.backgroundColor = c;
                     var light = lightOrDark(c)=='light'?true:false;
