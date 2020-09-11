@@ -58,7 +58,7 @@ function doBG(){
             .then(response => response.json())
             .then(item => {
                 document.getElementById("canvas").src = item.primaryImageSmall;
-                // document.getElementById("bg").style.backgroundImage = "url('"+item.primaryImageSmall+"')"
+                // document.getElementById("overlay").style.backgroundImage = "url('"+item.primaryImageSmall+"')"
                 document.getElementById("title").innerHTML = item.title;
                 var desc =  'by ' + item.artistDisplayName;
                 if(item.objectDate)
@@ -98,7 +98,7 @@ function doBG(){
                     }else{
                         document.getElementById("author").style.color = "#fff";
                     }
-                    // document.getElementById("author").style.color = c;
+                    document.getElementById("overlay").style.display = 'none';
                 });
 
                 
