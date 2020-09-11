@@ -8,6 +8,7 @@ html, body{
     padding: 0;
     margin: 0;
 }
+
 body{
     height: 100vh;
     background-size: contain;
@@ -17,19 +18,93 @@ body{
     
 }
 
+.bg{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#bg{
+    background-color: #333;
+    // background-size: cover;
+    // filter: blur(5px);
+    // background-position: center;
+}
+#overbg{
+    // background-color: #00000055;
+}
+#canvas{
+    max-width: 80%;
+    @media (min-width: 768px) {
+        max-width: 50%;
+        max-height: 70%;
+    }
+    border: 5px solid #000000;
+    display: block;
+    border-radius: 10px;
+}
 .main{
     padding: 2rem;
+    text-align: center;
 }
+
 .datetime{
-    position: absolute;
-    right: 2rem;
+    
     background-color: $bg;
     backdrop-filter: blur($blur);
     font-family: 'Roboto', sans-serif;
     padding: 1rem;
-    width: 400px;
     display: inline-flex;
     border-radius: 10px;
+    width: 250px;
+
+    @media (min-width: 768px) { 
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        width: 400px;
+    }
+
+    .weather{
+        width: 100px;
+        @media (min-width: 768px) { 
+            width: 125px;
+        }
+        
+    }
+    
+    .clock{
+        width: 150px;
+        @media (min-width: 768px) { 
+            width: 275px;
+        }
+    }
+    #time{
+        text-align: center;
+        font-weight: 400;
+        font-size: 3.5rem;
+        margin: 1.1rem 1rem;
+        @media (min-width: 768px) { 
+            font-size: 5rem;
+            margin: 0;
+        }
+        color: #fff;
+        
+        
+    }
+    #date{
+        text-align: center;
+        font-weight: 400;
+        font-size: 1.5rem;
+        @media (min-width: 768px) { 
+            font-size: 2rem;
+        }
+        color: #fff; 
+        margin: 0;
+    }
+    
     .divider{
         height: 80px;
         background-color: #fff;
@@ -37,29 +112,8 @@ body{
         align-self: center;
         margin: 5px;
     }
-    .weather, .clock{
-        
-    }
-    .weather{
-        width: 30%;
-    }
-    .clock{
-        width: 68%;
-    }
-    #time{
-        text-align: center;
-        font-weight: 400;
-        font-size: 5rem;
-        color: #fff;
-        margin: 0;
-    }
-    #date{
-        text-align: center;
-        font-weight: 400;
-        font-size: 2rem;
-        color: #fff; 
-        margin: 0;
-    }
+    
+    
 }
 
 
@@ -95,12 +149,17 @@ body{
         margin-left: auto;
     }
     #title{
-        font-size: 2rem;
+        font-size: 1.5rem;
+        @media (min-width: 768px) { 
+            font-size: 2rem;
+        }
+        
         margin-bottom: 0;
         font-weight: 700;
     }
     #author{
         margin-top: 0;
+        font-weight: 600;
         a{
             text-decoration: none;
             color: #fff;
@@ -161,9 +220,11 @@ body{
 
 #links{
     display: flex;
+    margin-bottom: 3rem;
     ul{
         list-style: none;
         display: flex;
+        flex-wrap: wrap;
         padding-inline-start: 20px;
         margin-block-start: 0;
         margin-block-end: 0;

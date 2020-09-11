@@ -21,10 +21,22 @@
 
             gtag('config', 'UA-140824797-8');
         </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
 
     </head>
-    <body id='body'>
+    <body>
+        <div class="bg" id='bg'>
+        </div>
+        <div class="bg" id="overbg">
+            <img id="canvas"/>
+        </div>
         <div class="main">
+            <div id="links">
+                <div class="links-menu" onclick="hideLinks()"><i class="fas fa-link close" ></i></div>
+                <ul id="links-list">
+                    
+                </ul>
+            </div>
             <div class="datetime">
                 <div class="weather">
                     <a class="weatherwidget-io" href="https://forecast7.com/en/n26d91n48d67/itajai/"  data-font="Roboto" data-icons="Climacons Animated" data-mode="Current" data-theme="dark" data-suncolor="#faee1c" data-basecolor="#00000000" data-mooncolor="#278ea5" data-cloudfill="#00000000">ITAJAÍ WEATHER</a>
@@ -40,12 +52,7 @@
    
             </div>
 
-            <div id="links">
-                <div class="links-menu" onclick="hideLinks()"><i class="fas fa-link close" ></i></div>
-                <ul id="links-list">
-                    
-                </ul>
-            </div>
+            
             <div class="description">
                 <p id="title"></p>
                 <p id="author"></p>
