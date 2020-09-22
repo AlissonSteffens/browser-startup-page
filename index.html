@@ -22,12 +22,71 @@
             gtag('config', 'UA-140824797-8');
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+        <style>
+            .overlay {
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                background: #1d2630;
+                background-size: cover;
+                z-index: 2;
+            }
+            .overlay p{
+                color: #fff;
+                font-family: 'Roboto', sans-serif;
+                font-size: 1.5rem;
+                text-align: center;
+            }
+            .overlay__inner {
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
 
+            .overlay__content {
+                left: 50%;
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .spinner {
+                width: 150px;
+                height: 150px;
+                padding: 3px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                background: rgb(63,249,220);
+                background: linear-gradient(0deg, rgba(63,249,220,0.1) 33%, rgba(63,249,220,1) 100%);
+                animation: spin .8s linear 0s infinite;
+                
+            }
+            .spinner span{
+                width: 100%;
+                height: 100%;
+                background-color: #1d2630;
+                border-radius: 50%;
+            }
+
+
+
+            @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+            }
+        </style>
     </head>
-    <body>
+    <body id="body-to-be-shown-before-gapi-load">
         <div class="overlay" id="overlay">
             <div class="overlay__inner">
-                <div class="overlay__content"><span class="spinner"></span>
+                <div class="overlay__content"><span class="spinner"><span></span></span>
                 <p>Loading...</p></div>
 
             </div>
@@ -39,7 +98,6 @@
         </div>
         <div class="main">
             <div id="links">
-                <div class="links-menu" onclick="hideLinks()"><i class="fas fa-link close" ></i></div>
                 <ul id="links-list">
                     
                 </ul>
@@ -85,9 +143,9 @@
             </div> -->
         </div>
         
-                
         <script src="js/clock.js"></script>
         <script src="js/bg.js"></script>
+        
         <!-- <script src="js/new_notifications.js"></script> -->
         <script src="js/links.js"></script>
     </body>

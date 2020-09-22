@@ -60,12 +60,12 @@ addLinks()
 
 var linkOn = true;
 
-function hideLinks(){
-    if(linkOn){
-        document.getElementById("links-list").setAttribute('class', 'animate__animated animate__backOutLeft');
-        setTimeout(() => { document.getElementById("links-list").setAttribute('class', 'hidden'); }, (1000));
-    }else{
-        document.getElementById("links-list").setAttribute('class', 'animate__animated animate__backInLeft');
-    }
-    linkOn = !linkOn;
-}
+// function hideLinks(){
+//     if(linkOn){
+//         document.getElementById("links-list").setAttribute('class', 'animate__animated animate__backOutLeft');
+//         setTimeout(() => { document.getElementById("links-list").setAttribute('class', 'hidden'); }, (1000));
+//     }else{
+//         document.getElementById("links-list").setAttribute('class', 'animate__animated animate__backInLeft');
+//     }
+//     linkOn = !linkOn;
+// }
