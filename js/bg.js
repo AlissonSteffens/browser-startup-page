@@ -84,11 +84,11 @@ function doBG(){
                 document.getElementById("author").innerHTML = desc;
 
                 const colorThief = new ColorThief();
+
                 const img = new Image();
 
-                img.setAttribute('crossOrigin', '');
-                img.src = item.primaryImageSmall;
-                
+                img.crossOrigin = 'Anonymous';
+                img.src = 'https://cors-anywhere.herokuapp.com/'+item.primaryImageSmall;
                 img.addEventListener('load', function() {
                     var p = colorThief.getPalette(img,4);
                     var a = p[0];
