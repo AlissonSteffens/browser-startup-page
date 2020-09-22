@@ -86,7 +86,7 @@ function doBG(){
                 const colorThief = new ColorThief();
                 const img = new Image();
 
-                img.crossOrigin = 'Anonymous';
+                img.setAttribute('crossOrigin', '');
                 img.src = item.primaryImageSmall;
                 
                 img.addEventListener('load', function() {
