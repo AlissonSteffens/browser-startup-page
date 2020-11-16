@@ -12,6 +12,88 @@ body {
   overflow: hidden;
 }
 
+.configs {
+  background-color: #00000077;
+  padding: 1rem;
+  width: 1.5rem;
+  font-size: 1.2rem;
+  height: 1.5rem;
+  color: white;
+  border-radius: 100%;
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+}
+
+.configs-modal {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.configs-modal .content {
+  border-radius: 20px;
+  background-color: white;
+  width: 30%;
+  padding: 1rem;
+}
+
+.configs-modal .content .container {
+  padding: 2rem;
+  padding-top: 1rem;
+}
+
+.configs-modal .content .close {
+  text-align: right;
+}
+
+.configs-modal .content .close .x {
+  outline: none;
+  border: none;
+  display: inline-block;
+  padding: .5rem .8rem;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+}
+
+.configs-modal .content .close .x:hover {
+  background-color: #333;
+}
+
+.configs-modal .content .source {
+  text-align: left;
+}
+
+.configs-modal .content .source select {
+  outline: none;
+  border: none;
+  padding: 1rem;
+  font-size: 1.2rem;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.configs-modal .content .source select option {
+  outline: none;
+  border: none;
+  padding: 1rem;
+  font-size: 1.2rem;
+  background-color: #eee;
+}
+
 .bg {
   position: absolute;
   width: 100vw;

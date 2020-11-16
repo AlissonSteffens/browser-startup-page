@@ -17,7 +17,78 @@ body{
     overflow: hidden;
     
 }
+.configs{
+    background-color: $bg;
+    padding: 1rem;
+    width: 1.5rem;
+    font-size: 1.2rem;
+    height: 1.5rem;
+    color: white;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+}
 
+.configs-modal{
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    
+    .content{
+        border-radius: 20px;
+        background-color: white;
+        width: 30%;
+        padding: 1rem;
+        .container{
+            padding: 2rem;
+            padding-top: 1rem;
+        }
+        .close{
+            text-align: right;
+            .x{
+                outline: none;
+                border: none;
+                display: inline-block;
+                padding: .5rem .8rem;
+                font-size: 1.2rem;
+                border-radius: 50%;
+                font-weight: bold;
+                background-color: black;
+                color: white;
+                &:hover{
+                    background-color: #333;
+                }
+            }
+        }
+        .source{
+            text-align: left;
+            select{
+                outline: none;
+                border: none;
+                padding: 1rem;
+                font-size: 1.2rem;
+                background-color: #eee;
+                border-radius: 10px;
+                option{
+                    outline: none;
+                    border: none;
+                    padding: 1rem;
+                    font-size: 1.2rem;
+                    background-color: #eee;
+                }
+            }
+        }
+    }
+    
+
+}
 .bg{
     position: absolute;
     width: 100vw;
