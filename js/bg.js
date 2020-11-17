@@ -122,11 +122,14 @@ function setImage(primaryImage, title, artist, objectDate, objectURL) {
 
 function doBG() {
   document.getElementById("overlay").style.display = 'flex';
-  const myRequest = new Request('https://awesome-api.vercel.app/api/'+endpoint_images);
+  const myRequest = new Request('http://localhost:3000/api/'+endpoint_images);
   fetch(myRequest)
     .then(response => response.json())
     .then(json => {
-      setImage(json.img, json.title, json.author, json.year, json.source)
+      let dado1 = json.author || json.type;
+      let dado2 = json.year || json.status;
+      
+      setImage(json.img, json.title, dado1, dado2, json.source)
     })
 
 }
