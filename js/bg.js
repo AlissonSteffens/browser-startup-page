@@ -63,7 +63,7 @@ function setImage(primaryImage, title, artist, objectDate, objectURL) {
   document.getElementById("canvas").src = primaryImage;
   // document.getElementById("overlay").style.backgroundImage = "url('"+item.primaryImageSmall+"')"
   document.getElementById("title").innerHTML = title;
-  var desc = 'by ' + artist;
+  var desc = artist;
   if (objectDate != "") {
     desc += ' (' + objectDate + ') ';
   }
