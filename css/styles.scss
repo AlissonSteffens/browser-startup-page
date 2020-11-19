@@ -108,11 +108,12 @@ body{
 }
 #canvas{
     max-width: 80%;
+    // background-color: #fff;
     @media (min-width: 768px) {
-        max-width: 50%;
+        max-width: 70%;
         max-height: 70%;
     }
-    border: 5px solid #000000;
+    // border: 5px solid #000000;
     display: block;
     border-radius: 10px;
 }

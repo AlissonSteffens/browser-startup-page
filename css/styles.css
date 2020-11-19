@@ -115,14 +115,13 @@ body {
 
 #canvas {
   max-width: 80%;
-  border: 5px solid #000000;
   display: block;
   border-radius: 10px;
 }
 
 @media (min-width: 768px) {
   #canvas {
-    max-width: 50%;
+    max-width: 70%;
     max-height: 70%;
   }
 }

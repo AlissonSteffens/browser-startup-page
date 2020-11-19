@@ -127,9 +127,9 @@ function doBG() {
     .then(response => response.json())
     .then(json => {
       let dado1 = json.author || json.type;
-      let dado2 = json.year || json.status;
-      
-      setImage(json.img, json.title, dado1, dado2, json.source)
+      let dado2 = json.year || json.status || json.id;
+      let dado3 = json.title || json.name;
+      setImage(json.img, dado3, dado1, dado2, json.source)
     })
 
 }
