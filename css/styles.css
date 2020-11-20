@@ -52,8 +52,14 @@ body {
 .configs-modal .content {
   border-radius: 20px;
   background-color: white;
-  width: 30%;
+  width: 90%;
   padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .configs-modal .content {
+    width: 30%;
+  }
 }
 
 .configs-modal .content .container {
@@ -231,6 +237,24 @@ body {
 
 .animate__animated.animate__backOutLeft {
   --animate-duration: 1s;
+}
+
+#powered {
+  position: absolute;
+  border-radius: 6px;
+  background-color: black;
+  right: 2px;
+  bottom: 2px;
+  padding: .5rem;
+  font-size: .8rem;
+  color: white;
+}
+
+#powered a {
+  font-weight: bold;
+  margin-left: .2rem;
+  color: #0070f3;
+  text-decoration: none;
 }
 
 .description {

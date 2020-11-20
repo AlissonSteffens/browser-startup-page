@@ -6,12 +6,6 @@ let links = [
         'color' : '#D44638'
     },
     {
-        'name':"Twitter",
-        'link': 'https://twitter.com/home',
-        'icon': 'fab fa-twitter',
-        'color' : '#1DA1F2'
-    },
-    {
         'name':"Github",
         'link': 'https://github.com/',
         'icon': 'fab fa-github',
@@ -22,12 +16,6 @@ let links = [
         'link': 'https://www.twitch.tv/',
         'icon': 'fab fa-twitch',
         'color' : '#6441a5'
-    },
-    {
-        'name':"Drive",
-        'link': 'https://drive.google.com/drive/my-drive',
-        'icon': 'fab fa-google-drive',
-        'color' : '#FFD04B'
     },
     {
         'name':"Youtube",
