@@ -56,18 +56,37 @@ function getColorasHex(a){
   return rgbToHex(a[0], a[1], a[2]);
 }
 
+function setRotations(rotate){
+  if(rotate){
+    document.getElementById("bg").style.transform = 'rotate(-5deg)';
+    document.getElementById("bg").style.height = '200vh';
+    document.getElementById("bg").style.width = '200vw';
+    document.getElementById("bg").style.top = '-50vh';
+    document.getElementById("bg").style.left = '-50vh';
+  }else{
+    document.getElementById("bg").style.transform = 'rotate(0deg)';
+    document.getElementById("bg").style.height = '100vh';
+    document.getElementById("bg").style.width = '100vw';
+    document.getElementById("bg").style.top = '00vh';
+    document.getElementById("bg").style.left = '00vh';
+  }
+}
 function placeMainImage(primaryImage){
   if(image_place == 'framed'){
     document.getElementById("canvas").style.display = 'block';
     document.getElementById("canvas").src = primaryImage;
+    setRotations(false)
   }else if(image_place == 'background'){
     document.getElementById("canvas").style.display = 'none';
     document.getElementById("bg").style.backgroundImage = 'url('+primaryImage+')';
     document.getElementById("bg").style.backgroundSize = 'cover';
+    setRotations(false)
   }else if(image_place == 'background-repeat'){
     document.getElementById("canvas").style.display = 'none';
     document.getElementById("bg").style.backgroundImage = 'url('+primaryImage+')';
     document.getElementById("bg").style.backgroundSize = 'auto';
+    setRotations(true)
+    
   }
 }
 
