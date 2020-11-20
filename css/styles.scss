@@ -17,7 +17,7 @@ body{
     overflow: hidden;
     
 }
-.configs{
+.configs, .update{
     background-color: $bg;
     padding: 1rem;
     width: 1.5rem;
@@ -28,8 +28,13 @@ body{
     position: absolute;
     bottom: 2rem;
     left: 2rem;
+    &:hover{
+        background-color: black;
+    }
 }
-
+.update{
+    left: 6rem;
+}
 .configs-modal{
     z-index: 1;
     position: absolute;
