@@ -58,9 +58,9 @@ function getColorasHex(a){
 
 function setRotations(rotate){
   if(rotate){
-    document.getElementById("bg").style.transform = 'rotate(-5deg)';
+    document.getElementById("bg").style.transform = 'rotate('+image_angle+'deg)';
     document.getElementById("bg").style.height = '200vh';
-    document.getElementById("bg").style.width = '200vw';
+    document.getElementById("bg").style.width = '300vw';
     document.getElementById("bg").style.top = '-50vh';
     document.getElementById("bg").style.left = '-50vh';
   }else{

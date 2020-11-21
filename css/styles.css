@@ -91,7 +91,7 @@ body {
   text-align: left;
 }
 
-.configs-modal .content .source select {
+.configs-modal .content .source select, .configs-modal .content .source input {
   outline: none;
   border: none;
   padding: 1rem;
@@ -100,7 +100,7 @@ body {
   border-radius: 10px;
 }
 
-.configs-modal .content .source select option {
+.configs-modal .content .source select option, .configs-modal .content .source input option {
   outline: none;
   border: none;
   padding: 1rem;
