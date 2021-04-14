@@ -1,4 +1,4 @@
-var endpoint_images = localStorage.getItem("source") || 'art'
+var endpoint_images = localStorage.getItem("source") || 'earthview'
 var image_place = localStorage.getItem("image-place") || 'framed'
 var image_angle = parseInt(localStorage.getItem("image-angle")) || -5
 document.getElementById('sources').value = endpoint_images;
