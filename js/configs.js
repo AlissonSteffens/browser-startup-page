@@ -27,7 +27,7 @@ function trocar_posicao_imagem(){
     image_place = document.getElementById("image-place").value;
     localStorage.setItem("image-place", image_place);
     doBG()
-    document.getElementById('image-angle').style.display = (image_place == 'background-repeat')?'block':'none';
+    document.getElementById('image-angle').style.display = image_angle;
     document.getElementById('angle-header').style.display = (image_place == 'background-repeat')?'block':'none';
     closeConfigs()
 }

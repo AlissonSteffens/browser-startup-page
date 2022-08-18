@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,900;1,400&display=swap");
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
 }
@@ -8,29 +9,41 @@ body {
   height: 100vh;
   background-size: contain;
   background-position: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   overflow: hidden;
 }
 
-.configs, .update {
-  background-color: #00000077;
-  padding: 1rem;
-  width: 1.5rem;
-  font-size: 1.2rem;
-  height: 1.5rem;
+.configs,
+.update {
+  font-size: 1rem;
   color: white;
   border-radius: 100%;
   position: absolute;
   bottom: 2rem;
   left: 2rem;
+  display: -ms-grid;
+  display: grid;
+  padding: 0.5rem;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
-.configs:hover, .update:hover {
+.configs svg,
+.update svg {
+  width: 1.5rem;
+  -webkit-filter: drop-shadow(1px 1px 0.5px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(1px 1px 0.5px rgba(0, 0, 0, 0.5));
+}
+
+.configs:hover,
+.update:hover {
   background-color: black;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .update {
-  left: 6rem;
+  left: 5rem;
 }
 
 .configs-modal {
@@ -53,6 +66,7 @@ body {
   border-radius: 20px;
   background-color: white;
   width: 90%;
+  position: relative;
   padding: 1rem;
 }
 
@@ -63,35 +77,50 @@ body {
 }
 
 .configs-modal .content .container {
-  padding: 2rem;
+  padding: 1rem;
   padding-top: 1rem;
+  position: relative;
+}
+
+.configs-modal .content .container h1,
+.configs-modal .content .container h2 {
+  margin: 0;
 }
 
 .configs-modal .content .close {
-  text-align: right;
+  position: absolute;
+  right: 1rem;
+  z-index: 2;
 }
 
 .configs-modal .content .close .x {
   outline: none;
   border: none;
-  display: inline-block;
-  padding: .5rem .8rem;
-  font-size: 1.2rem;
+  padding: 0.2rem;
+  margin: 0;
   border-radius: 50%;
-  font-weight: bold;
-  background-color: black;
-  color: white;
+  background-color: transparent;
+  color: #aaa;
+  width: 2rem;
+  height: 2rem;
+  z-index: 2 !important;
 }
 
-.configs-modal .content .close .x:hover {
-  background-color: #333;
+.configs-modal .content .close .x svg {
+  width: 1.5rem;
+}
+
+.configs-modal .content .close:hover .x {
+  color: #333 !important;
 }
 
 .configs-modal .content .source {
+  margin-top: 1rem;
   text-align: left;
 }
 
-.configs-modal .content .source select, .configs-modal .content .source input {
+.configs-modal .content .source select,
+.configs-modal .content .source input {
   outline: none;
   border: none;
   padding: 1rem;
@@ -100,7 +129,8 @@ body {
   border-radius: 10px;
 }
 
-.configs-modal .content .source select option, .configs-modal .content .source input option {
+.configs-modal .content .source select option,
+.configs-modal .content .source input option {
   outline: none;
   border: none;
   padding: 1rem;
@@ -148,15 +178,14 @@ body {
 .datetime {
   z-index: 3;
   background-color: #00000077;
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
-  font-family: 'Roboto', sans-serif;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  font-family: "Roboto", sans-serif;
   padding: 1rem;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   border-radius: 10px;
-  width: 250px;
 }
 
 @media (min-width: 768px) {
@@ -164,67 +193,22 @@ body {
     position: absolute;
     top: 2rem;
     right: 2rem;
-    width: 400px;
-  }
-}
-
-.datetime .weather {
-  width: 100px;
-}
-
-@media (min-width: 768px) {
-  .datetime .weather {
-    width: 125px;
-  }
-}
-
-.datetime .clock {
-  width: 150px;
-}
-
-@media (min-width: 768px) {
-  .datetime .clock {
-    width: 275px;
   }
 }
 
 .datetime #time {
   text-align: center;
-  font-weight: 400;
-  font-size: 3.5rem;
-  margin: 1.1rem 1rem;
+  font-size: 2rem;
+  margin: 0.5rem;
   color: #fff;
-}
-
-@media (min-width: 768px) {
-  .datetime #time {
-    font-size: 5rem;
-    margin: 0;
-  }
 }
 
 .datetime #date {
   text-align: center;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #fff;
   margin: 0;
-}
-
-@media (min-width: 768px) {
-  .datetime #date {
-    font-size: 2rem;
-  }
-}
-
-.datetime .divider {
-  height: 80px;
-  background-color: #fff;
-  width: 1px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  margin: 5px;
 }
 
 .animate__animated.animate__backOutRight {
@@ -245,14 +229,14 @@ body {
   background-color: black;
   right: 2px;
   bottom: 2px;
-  padding: .5rem;
-  font-size: .8rem;
+  padding: 0.5rem;
+  font-size: 0.6rem;
   color: white;
 }
 
 #powered a {
   font-weight: bold;
-  margin-left: .2rem;
+  margin-left: 0.2rem;
   color: #0070f3;
   text-decoration: none;
 }
@@ -280,9 +264,9 @@ body {
 
 .description p {
   background-color: #00000077;
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
-  padding: .3rem .75rem;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  padding: 0.3rem 0.75rem;
   display: block;
   border-radius: 5px;
   display: -webkit-inline-box;
@@ -315,7 +299,7 @@ body {
 .description #author a {
   text-decoration: none;
   color: #fff;
-  margin-left: .75rem;
+  margin-left: 0.75rem;
 }
 
 #notifications {
@@ -336,17 +320,17 @@ body {
 #notifications .notification {
   margin: 10px;
   background-color: #00000077;
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
   color: #fff;
-  padding: .25rem 2rem;
+  padding: 0.25rem 2rem;
   font-size: 1.2rem;
   border-radius: 10px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: .2s ease;
-  transition: .2s ease;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
 }
 
 #notifications .notification:hover .close {
@@ -354,7 +338,8 @@ body {
           transform: scale(1.25);
 }
 
-#notifications .notification p, #notifications .notification i {
+#notifications .notification p,
+#notifications .notification i {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -369,16 +354,16 @@ body {
 
 #notifications .notification i {
   font-style: normal;
-  -webkit-transition: .2s ease;
-  transition: .2s ease;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
   margin-right: 15px;
   min-width: 25px;
 }
 
 #notifications .warning {
   background-color: #ffffff77;
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
   color: #000;
 }
 
@@ -401,15 +386,20 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-padding-start: 20px;
-          padding-inline-start: 20px;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
   -webkit-margin-before: 0;
           margin-block-start: 0;
   -webkit-margin-after: 0;
           margin-block-end: 0;
+  -webkit-backdrop-filter: blur(4px) brightness(1.2);
+          backdrop-filter: blur(4px) brightness(1.2);
+  border-radius: 5px;
+  z-index: 9;
 }
 
-#links li, #links .links-menu {
+#links li,
+#links .links-menu {
   padding: 5px 10px;
   font-size: 1rem;
   -ms-flex-item-align: center;
@@ -417,32 +407,41 @@ body {
       align-self: center;
 }
 
-#links li .close, #links .links-menu .close {
+#links li .close,
+#links .links-menu .close {
   color: rgba(255, 255, 255, 0.274);
-  -webkit-transition: .2s ease;
-  transition: .2s ease;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
 }
 
-#links li:hover .close, #links .links-menu:hover .close {
+#links li:hover .close,
+#links .links-menu:hover .close {
   color: #ffffff;
 }
 
 #links .link {
   z-index: 3;
   text-align: center;
-  font-size: 1.5rem;
-  background-color: white;
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
-  border-radius: 10px;
-  margin-right: 10px;
-  -webkit-transition: .2s ease;
-  transition: .2s ease;
+  font-size: 1rem;
+  border-radius: 5px;
+  margin: 2px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+#links .link .icon {
+  color: inherit;
 }
 
 #links .link:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-backdrop-filter: blur(4px) brightness(1.3);
+          backdrop-filter: blur(4px) brightness(1.3);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+#links .link:hover .icon {
+  color: #000;
 }
 
 #links .links-menu {

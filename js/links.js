@@ -1,47 +1,41 @@
 let links = [
-    {
-        'name':"Gmail",
-        'link': 'https://mail.google.com/mail/u/0/#inbox',
-        'icon': 'fas fa-envelope',
-        'color' : '#D44638'
-    },
-    {
-        'name':"Github",
-        'link': 'https://github.com/',
-        'icon': 'fab fa-github',
-        'color' : '#333'
-    },
-    {
-        'name':"Twitch",
-        'link': 'https://www.twitch.tv/',
-        'icon': 'fab fa-twitch',
-        'color' : '#6441a5'
-    },
-    {
-        'name':"Youtube",
-        'link': 'https://www.youtube.com/',
-        'icon': 'fab fa-youtube',
-        'color' : '#c4302b'
-    },
-    {
-        'name':"Reddit",
-        'link': 'https://www.reddit.com/',
-        'icon': 'fab fa-reddit-alien',
-        'color' : '#FF5700'
-    },
+  {
+    'name': "Github",
+    'link': 'https://github.com/',
+    'icon': 'fab fa-github',
+    'color': '#333'
+  },
+  {
+    'name': "Twitch",
+    'link': 'https://www.twitch.tv/',
+    'icon': 'fab fa-twitch',
+    'color': '#6441a5'
+  },
+  {
+    'name': "Youtube",
+    'link': 'https://www.youtube.com/',
+    'icon': 'fab fa-youtube',
+    'color': '#c4302b'
+  },
+  {
+    'name': "Reddit",
+    'link': 'https://www.reddit.com/',
+    'icon': 'fab fa-reddit-alien',
+    'color': '#FF5700'
+  },
 ]
 
-function addLink(link, icon, color){
-    var div = document.createElement('li');
-    div.setAttribute('class', 'link');
-    div.innerHTML = '<a href="'+link+'" target="_blank"> <i class="'+icon+'" style="color: '+color+';"></i> </a>'  
-    document.getElementById("links-list").appendChild(div)
+function addLink(link, icon, color) {
+  var div = document.createElement('li');
+  div.setAttribute('class', 'link');
+  div.innerHTML = '<a href="' + link + '"  style="color: ' + color + ';" target="_blank"> <i class="icon ' + icon + '"></i> </a>'
+  document.getElementById("links-list").appendChild(div)
 }
 
-function addLinks(){
-    links.forEach((l) =>{
-        addLink(l.link, l.icon, l.color)
-    })
+function addLinks() {
+  links.forEach((l) => {
+    addLink(l.link, l.icon, l.color)
+  })
 }
 
 addLinks()

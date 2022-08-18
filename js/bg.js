@@ -57,12 +57,13 @@ function getColorasHex(a) {
 }
 
 function setRotations(rotate) {
+  let negativeMargin = 50-image_angle;
   if (rotate) {
     document.getElementById("bg").style.transform = 'rotate(' + image_angle + 'deg)';
     document.getElementById("bg").style.height = '200vh';
     document.getElementById("bg").style.width = '300vw';
-    document.getElementById("bg").style.top = '-50vh';
-    document.getElementById("bg").style.left = '-50vh';
+    document.getElementById("bg").style.top = '-'+negativeMargin+'vh';
+    document.getElementById("bg").style.left = '-'+negativeMargin+'vh';
   } else {
     document.getElementById("bg").style.transform = 'rotate(0deg)';
     document.getElementById("bg").style.height = '100vh';
