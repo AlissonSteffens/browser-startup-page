@@ -1,53 +1,41 @@
-let links = [
-  {
-    'name': "Github",
-    'link': 'https://github.com/',
-    'icon': 'fab fa-github',
-    'color': '#333'
-  },
-  {
-    'name': "Twitch",
-    'link': 'https://www.twitch.tv/',
-    'icon': 'fab fa-twitch',
-    'color': '#6441a5'
-  },
-  {
-    'name': "Youtube",
-    'link': 'https://www.youtube.com/',
-    'icon': 'fab fa-youtube',
-    'color': '#c4302b'
-  },
-  {
-    'name': "Reddit",
-    'link': 'https://www.reddit.com/',
-    'icon': 'fab fa-reddit-alien',
-    'color': '#FF5700'
-  },
-]
+// render links to the DOM (#links)
+function renderLinks() {
+  const linksList = document.querySelector("#links");
+  linksList.innerHTML = "";
+  // get links by category
+  let categories = links.map((link) => link.category);
+  categories = [...new Set(categories)];
 
-function addLink(link, icon, color) {
-  var div = document.createElement('li');
-  div.setAttribute('class', 'link');
-  div.innerHTML = '<a href="' + link + '"  style="color: ' + color + ';" target="_blank"> <i class="icon ' + icon + '"></i> </a>'
-  document.getElementById("links-list").appendChild(div)
+  categories.forEach((category) => {
+    let categoryLinks = links.filter((link) => link.category === category);
+    let categoryContainer = document.createElement("div");
+    categoryContainer.classList.add("category");
+    categoryContainer.innerHTML = `<h4>${category}</h4>`;
+    let list = document.createElement("ul");
+    categoryLinks.forEach((link, index) => {
+      let listItem = document.createElement("li");
+      listItem.innerHTML = `
+          <a class="link" href="${link.url}" target="_blank"
+          rel="noopener noreferrer" title="${link.name}"
+          >${link.icon} <span>${link.name}</span></a>
+        `;
+      list.appendChild(listItem);
+    });
+    categoryContainer.appendChild(list);
+    linksList.appendChild(categoryContainer);
+  });
 }
 
-function addLinks() {
-  links.forEach((l) => {
-    addLink(l.link, l.icon, l.color)
-  })
+// add a new link to the links array and re-render the links
+function addLink(name, url) {
+  links.push({ name, url });
+  localStorage.setItem("links", JSON.stringify(links));
+  renderLinks();
 }
 
-addLinks()
-
-var linkOn = true;
-
-// function hideLinks(){
-//     if(linkOn){
-//         document.getElementById("links-list").setAttribute('class', 'animate__animated animate__backOutLeft');
-//         setTimeout(() => { document.getElementById("links-list").setAttribute('class', 'hidden'); }, (1000));
-//     }else{
-//         document.getElementById("links-list").setAttribute('class', 'animate__animated animate__backInLeft');
-//     }
-//     linkOn = !linkOn;
-// }
+// delete a link from the links array and re-render the links
+function deleteLink(index) {
+  links.splice(index, 1);
+  localStorage.setItem("links", JSON.stringify(links));
+  renderLinks();
+}

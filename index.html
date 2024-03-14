@@ -1,187 +1,47 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Alisson Steffens`s Startup Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Wellcome</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140824797-8"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-140824797-8');
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
-    <style>
-        .overlay {
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            background: #1d2630;
-            background-size: cover;
-            z-index: 2;
-        }
+    <script src="data/links.js"></script>
 
-        .overlay p {
-            color: #fff;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.5rem;
-            text-align: center;
-        }
+    <script src="js/bgs/gameOfLife.js"></script>
+    <script src="js/bgs/matrix.js"></script>
+    <script src="js/bgs/pokemon.js"></script>
+    <script src="js/bg.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/links.js"></script>
+    <script src="main.js"></script>
+  </head>
 
-        .overlay__inner {
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-        }
-
-        .overlay__content {
-            left: 50%;
-            position: absolute;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .spinner {
-            width: 150px;
-            height: 150px;
-            padding: 3px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            background: rgb(63, 249, 220);
-            background: linear-gradient(0deg, rgba(63, 249, 220, 0.1) 33%, rgba(63, 249, 220, 1) 100%);
-            animation: spin .8s linear 0s infinite;
-
-        }
-
-        .spinner span {
-            width: 100%;
-            height: 100%;
-            background-color: #1d2630;
-            border-radius: 50%;
-        }
-
-
-
-        @keyframes spin {
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
-</head>
-
-<body id="body-to-be-shown-before-gapi-load">
-    <div class="overlay" id="overlay">
-        <div class="overlay__inner">
-            <div class="overlay__content"><span class="spinner" id="spinner"><span id="spinner-span"></span></span>
-                <p id="loading-text">Loading...</p>
-            </div>
-
-        </div>
+  <body>
+    <div id="bg"></div>
+    <div id="loading">
+      <div class="content">
+        <div class="spinner"></div>
+        <h1>Loading...</h1>
+      </div>
     </div>
-    <div class="bg" id='bg'>
-    </div>
-    <div class="bg" id="overbg">
-        <img id="canvas" />
-    </div>
-    <div class="main">
-        <div id="links">
-            <ul id="links-list">
-
-            </ul>
-        </div>
-        <div class="datetime">
-            <div class="clock">
-                <h2 id='time'></h2>
-                <h3 id='date'></h3>
-            </div>
-
-        </div>
-
-
-        <div class="description">
-            <p id="title"></p>
-            <p id="author"></p>
-
-        </div>
-        <div id="powered"> <span>Powered by <a href="https://awesome-api.vercel.app/" target="_blank"> The Awesome
-                    API</a></span></div>
-
-        <div class="configs" onclick="openConfigs()">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-        </div>
-        <div class="update" onclick="getDataAndDoBG()">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-            </svg>
-        </div>
-
-        <div class="configs-modal" id="settings">
-            <div class="content">
-                <div class="close"><button class="x" onclick="closeConfigs()"><svg xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg></button></div>
-                <div class="container">
-                    <h1 class="title">Settings</h1>
-                    <div class="source">
-                        <h2>Image Source</h2>
-                        <select id="sources" name="sources" onchange="trocar_endpoint_imagem()">
-                            <option value="earthview">Earth View</option>
-                            <option value="art">Arts</option>
-                            <option value="picsum">Picsum</option>
-                            <option value="rick-and-morty">Rick and Morty Character</option>
-                            <option value="final-space">Final Space Character</option>
-                            <option value="pokemon">Pokemon Sprite</option>
-                            <option value="dota">Dota Hero</option>
-                            <option value="lol">LoL Champion</option>
-                        </select>
-                    </div>
-
-                    <div class="source">
-                        <h2>Image Place</h2>
-                        <select id="image-place" name="image-place" onchange="trocar_posicao_imagem()">
-                            <option value="framed">Framed</option>
-                            <option value="background">Background</option>
-                            <option value="background-repeat">Background Repeat</option>
-                        </select>
-                        <h3 id="angle-header">Image angle (for background Repeat)</h3>
-                        <input type="number" id="image-angle" onchange="trocar_angulo_imagem()">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <script src="./js/configs.js"></script>
-    <script src="./js/clock.js"></script>
-    <script src="./js/bg.js"></script>
-
-    <!-- <script src="js/new_notifications.js"></script> -->
-    <script src="./js/links.js"></script>
-</body>
-
+    <main>
+      <header>
+        <div id="bgToggles"></div>
+      </header>
+      <div class="content">
+        <section id="clock">
+          <div class="content">
+            <h1 id="time">00:00</h1>
+            <h2 id="date">00/00/0000</h2>
+          </div>
+        </section>
+      </div>
+      <footer>
+        <section id="links"></section>
+      </footer>
+    </main>
+  </body>
 </html>
