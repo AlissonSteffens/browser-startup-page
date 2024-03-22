@@ -1,7 +1,7 @@
 let links = [
   {
     name: "GPT",
-    url: "chat.openai.com",
+    url: "https://chat.openai.com",
     category: "Utils",
     icon: "🤖",
   },
