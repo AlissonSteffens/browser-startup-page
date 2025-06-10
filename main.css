@@ -1,4 +1,3 @@
-/* colors as vars */
 :root {
   --primary: #f3a712;
   --bg: #333;
@@ -27,59 +26,9 @@ main {
   font-family: "Popins", sans-serif;
 }
 
-header {
-  padding: 1rem;
-}
-
 footer {
-
   padding: 4rem 1rem;
   color: #fff;
-}
-
-#loading {
-  display: grid;
-  place-items: center;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.089);
-  backdrop-filter: blur(5px);
-  z-index: 1000;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: 0.3s;
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    .spinner {
-      width: 50px;
-      height: 50px;
-      border: 3px solid #f3f3f3;
-      border-top: 3px solid var(--bg);
-      border-radius: 50%;
-      animation: spin 2s linear infinite;
-    }
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-main {
-  .content {
-    display: grid;
-  }
 }
 
 #clock {
@@ -88,25 +37,20 @@ main {
   color: var(--foreground);
   font-size: 2rem;
   font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  line-height: normal;
-  /* disable selection */
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-
+  margin-top: 30vh;
+  
   .content {
     text-align: center;
-    #date,
-    #time {
-      margin: 0;
+    h1, h2 {
+    margin: 0;
+    padding: 0;
     }
     #time {
       font-size: 5rem;
     }
+
+
     #date {
       color: var(--primary);
     }
@@ -116,90 +60,114 @@ main {
 #links {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
-  text-align: center;
   flex-wrap: wrap;
+  text-align: center;
+}
 
-  /* media query */
-  @media (max-width: 768px) {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
+.category-toggle {
+  position: relative;
+  display: inline-block;
+}
 
-  ul {
-    display: flex;
-    justify-content: center;
-    padding-inline-start: 0;
-    gap: 1rem;
-    margin: 0;
-  }
+.category-button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  text-align: center;
+  padding: 0;
+}
 
-  li {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  h4 {
-    margin: 0;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 0.2rem;
-  }
-  .link {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    text-decoration: none;
-    color: #fff;
-    font-size: 2rem;
-    padding: 0.2rem 1rem;
-    border-radius: 1rem;
-    margin: 0;
-    background-color: rgba(255, 255, 255, 0.089);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    overflow: hidden;
-    transform-style: preserve-3d;
-    transition: transform 0.2s ease, background-color 0.3s, box-shadow 0.3s;
+.category-links {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(calc(-100% - 4rem));
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 10;
+  padding: .5rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.001);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+  min-width: 200px;
+  list-style: none;
+}
 
-    /* Glare */
-    &::after {
-      content: "";
-      position: absolute;
-      top: var(--glare-y, 50%);
-      left: var(--glare-x, 50%);
-      width: 100%;
-      height: 200%;
-      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.201), transparent 60%);
-      transform: translate(-50%, -50%);
-      opacity: var(--glare-opacity, 0);
-      transition: opacity 0.2s ease;
-      pointer-events: none;
-      z-index: 0;
-    }
+.category-links.hidden {
+  display: none;
+}
 
-    &:hover {
-      color: var(--primary, #facc15);
-      background-color: rgba(255, 255, 255, 0.2);
-      box-shadow: 0 0 15px rgba(223, 174, 76, 0.5);
-    }
+.category-button.link {
+  font-size: 2rem;
+  padding: 0.2rem 1rem;
+  border-radius: .5rem;
+  background-color: rgba(255, 255, 255, 0.146);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease, background-color 0.3s, box-shadow 0.3s;
+}
 
-    span {
-      font-size: 0.9rem;
-      z-index: 1;
-    }
+.category-button.link:hover {
+  color: var(--primary);
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(223, 174, 76, 0.5);
+}
 
-    svg {
-      fill: #fff;
-      object-fit: cover;
-      z-index: 1;
-    }
-  }
+.link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.2rem 1rem;
+  border-radius: .5rem;
+  background-color: rgba(255, 255, 255, 0.089);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease, background-color 0.3s, box-shadow 0.3s;
+}
 
+.link::after {
+  content: "";
+  position: absolute;
+  top: var(--glare-y, 50%);
+  left: var(--glare-x, 50%);
+  width: 100%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent 60%);
+  transform: translate(-50%, -50%);
+  opacity: var(--glare-opacity, 0);
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 0;
+}
 
+.link:hover {
+  color: var(--primary);
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(223, 174, 76, 0.5);
+}
+
+.link span, .link svg {
+  z-index: 1;
 }
 
 #bg {
@@ -212,10 +180,4 @@ main {
   background-image: url('/bg.jpg');
   background-size: cover;
   background-position: center;
-}
-
-#bgOverlay {
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
 }

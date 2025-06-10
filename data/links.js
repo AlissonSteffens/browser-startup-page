@@ -89,18 +89,4 @@ let links = [
     category: "Lore",
     icon: "🔒",
   },
-
-  // === Misc / Inspiração ===
-  {
-    name: "Hackaday",
-    url: "https://hackaday.com",
-    category: "Misc",
-    icon: "⚙️",
-  },
-  {
-    name: "The Old Reader",
-    url: "https://theoldreader.com",
-    category: "Misc",
-    icon: "📰",
-  }
 ];

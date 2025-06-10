@@ -1,5 +1,3 @@
-
-
 function setupLinkEffects() {
   const links = document.querySelectorAll('.link');
 
@@ -27,21 +25,22 @@ function setupLinkEffects() {
   });
 }
 
-// render links to the DOM (#links)
 function renderLinks() {
   const linksList = document.querySelector("#links");
   linksList.innerHTML = "";
-
-  let categories = links.map((link) => link.category);
-  categories = [...new Set(categories)];
+  let categories = [...new Set(links.map((link) => link.category))];
 
   categories.forEach((category) => {
     let categoryLinks = links.filter((link) => link.category === category);
     let categoryContainer = document.createElement("div");
-    categoryContainer.classList.add("category");
-    categoryContainer.innerHTML = `<h4>${category}</h4>`;
-    let list = document.createElement("ul");
+    categoryContainer.classList.add("category-toggle");
+    const categoryIcon = categoryLinks[0]?.icon || '📁'; // fallback padrão
+    categoryContainer.innerHTML = `
+      <button class="category-button link">${categoryIcon} <span>${category}</span></button>
+      <ul class="category-links hidden"></ul>
+    `;
 
+    let list = categoryContainer.querySelector(".category-links");
     categoryLinks.forEach((link) => {
       let listItem = document.createElement("li");
       listItem.innerHTML = `
@@ -52,22 +51,33 @@ function renderLinks() {
       list.appendChild(listItem);
     });
 
-    categoryContainer.appendChild(list);
     linksList.appendChild(categoryContainer);
   });
 
-  // 🧠 Instala o efeito de glare e tilt
+  document.querySelectorAll('.category-button').forEach(button => {
+  button.addEventListener('click', () => {
+    const allMenus = document.querySelectorAll('.category-links');
+    const currentMenu = button.nextElementSibling;
+
+    allMenus.forEach(menu => {
+      if (menu !== currentMenu) {
+        menu.classList.add('hidden');
+      }
+    });
+
+    currentMenu.classList.toggle('hidden');
+  });
+});
+
   setupLinkEffects();
 }
 
-// add a new link to the links array and re-render the links
 function addLink(name, url) {
   links.push({ name, url });
   localStorage.setItem("links", JSON.stringify(links));
   renderLinks();
 }
 
-// delete a link from the links array and re-render the links
 function deleteLink(index) {
   links.splice(index, 1);
   localStorage.setItem("links", JSON.stringify(links));
