@@ -57,36 +57,4 @@ let links = [
     category: "AI",
     icon: "📄",
   },
-  {
-    name: "OpenRouter",
-    url: "https://openrouter.ai",
-    category: "AI",
-    icon: "🌐",
-  },
-
-  // === RPG e Cultura ===
-  {
-    name: "World Anvil",
-    url: "https://www.worldanvil.com",
-    category: "RPG",
-    icon: "📜",
-  },
-  {
-    name: "DnDBeyond",
-    url: "https://www.dndbeyond.com",
-    category: "RPG",
-    icon: "🐉",
-  },
-  {
-    name: "Roll20",
-    url: "https://roll20.net",
-    category: "RPG",
-    icon: "🎲",
-  },
-  {
-    name: "SCP Wiki",
-    url: "https://scp-wiki.wikidot.com",
-    category: "Lore",
-    icon: "🔒",
-  },
 ];
