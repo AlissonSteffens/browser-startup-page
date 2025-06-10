@@ -13,8 +13,6 @@ function showSpinner() {
 document.addEventListener("DOMContentLoaded", () => {
   updateClock();
   renderLinks();
-  renderBGToggles();
-  renderBG();
   hideSpinner();  
 });
 
